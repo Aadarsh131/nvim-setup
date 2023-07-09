@@ -19,6 +19,9 @@ require('packer').startup(function(use)
   --treesitter (syntax highlighting)
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
+  --bufferline (for buffers,tabs,windows,and many more)
+  use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+
 	--alpha (for initial page)
 	use {
             'goolord/alpha-nvim',

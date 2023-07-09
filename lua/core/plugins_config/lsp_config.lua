@@ -1,6 +1,17 @@
-require("mason").setup()
-require("mason-lspconfig").setup {
-    ensure_installed = { "lua_ls", "clangd", "vtsls","tsserver","quick_lint_js", "jsonls" },
+--require("mason").setup()
+--require("mason-lspconfig").setup {
+  --  ensure_installed = { "lua_ls", "clangd", "vtsls","tsserver","quick_lint_js", "jsonls" },
+--}
+
+-- Setup language servers.
+local lspconfig = require('lspconfig')
+lspconfig.pyright.setup {}
+lspconfig.tsserver.setup {}
+lspconfig.rust_analyzer.setup {
+  -- Server-specific settings. See `:help lspconfig-setup`
+  settings = {
+    ['rust-analyzer'] = {},
+  },
 }
 
 -- Global mappings.
