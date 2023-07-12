@@ -45,7 +45,7 @@ require('packer').startup(function(use)
     opts = {},
   }
   use {'martinsione/darkplus.nvim'}
-
+  use ('Tsuzat/NeoSolarized.nvim')
   --telescope (for find, filter, preview, pick)
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.2',

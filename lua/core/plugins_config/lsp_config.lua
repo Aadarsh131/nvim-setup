@@ -6,10 +6,8 @@ require("mason-lspconfig").setup {
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 lspconfig.tsserver.setup {}
-lspconfig.quick_link_js.setup {}
 lspconfig.clangd.setup {}
 lspconfig.gopls.setup {}
-lspconfig.prettier.setup {}
 -- rls is a deprecated rust language server as mentioned in there official github repo, using rust_analyzer instead
 --lspconfig.rls.setup {} 
 
