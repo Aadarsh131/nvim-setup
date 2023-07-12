@@ -90,10 +90,10 @@ _G.packer_plugins = {
     path = "/home/aadarsh/.local/share/nvim/site/pack/packer/start/catppuccin",
     url = "https://github.com/catppuccin/nvim"
   },
-  ["coc.nvim"] = {
+  ["darkplus.nvim"] = {
     loaded = true,
-    path = "/home/aadarsh/.local/share/nvim/site/pack/packer/start/coc.nvim",
-    url = "https://github.com/neoclide/coc.nvim"
+    path = "/home/aadarsh/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
+    url = "https://github.com/martinsione/darkplus.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,

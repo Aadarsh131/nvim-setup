@@ -1,17 +1,25 @@
---require("mason").setup()
---require("mason-lspconfig").setup {
-  --  ensure_installed = { "lua_ls", "clangd", "vtsls","tsserver","quick_lint_js", "jsonls" },
---}
+require("mason").setup()
+require("mason-lspconfig").setup {
+  ensure_installed = { "lua_ls", "clangd", "vtsls", "tsserver", "quick_lint_js", "jsonls", "gopls"},
+}
 
 -- Setup language servers.
 local lspconfig = require('lspconfig')
-lspconfig.pyright.setup {}
 lspconfig.tsserver.setup {}
+lspconfig.quick_link_js.setup {}
+lspconfig.clangd.setup {}
+lspconfig.gopls.setup {}
+lspconfig.prettier.setup {}
+-- rls is a deprecated rust language server as mentioned in there official github repo, using rust_analyzer instead
+--lspconfig.rls.setup {} 
+
 lspconfig.rust_analyzer.setup {
-  -- Server-specific settings. See `:help lspconfig-setup`
-  settings = {
+-- Server-specific settings. See `:help lspconfig-setup`
+--[[
+    settings = {
     ['rust-analyzer'] = {},
   },
+  --]]
 }
 
 -- Global mappings.
@@ -46,7 +54,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
     vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    
+
     --vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, opts)
 
     vim.keymap.set('n', '<space>f', function()
@@ -54,4 +62,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
   end,
 })
-
